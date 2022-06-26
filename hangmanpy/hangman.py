@@ -104,7 +104,7 @@ def main():
 
     while hasWon == False: 
         print( "Correct Guesses =", lettersCorrect ) 
-        print( "Incorrect Guesses =", lettersWrong ) 
+        print( "Inorrect Guesses =", lettersWrong ) 
         render_hangman(wrongGuessCount)
         print(lowerbars)
         lowerbarsAsString = "".join(lowerbars)
