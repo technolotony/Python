@@ -3,8 +3,8 @@ import requests as r
 
 def get_random_word():
     # Get a random word from this random word API 
-    uri = 'https://random-word-api.herokuapp.com/word'
-    word = (r.get(uri)).json()[0]
+    uri = 'https://random-words-api.vercel.app/word'
+    word = (r.get(uri)).json()[0]['word']
     return word
 
 def render_hangman(wrongGuessCount): 
@@ -110,6 +110,7 @@ def main():
         lowerbarsAsString = "".join(lowerbars)
 
         # If our word = our lower bars, the player has won and should not guess again. 
+        # If the player wins, break the while loop by sitting haswon to true. 
         if word == lowerbarsAsString: 
                     print(colors["correct"],"You won!",reset) 
                     hasWon = True
@@ -159,4 +160,5 @@ def main():
             print(colors['error'],"Input invalid. Please provide only one letter.",reset)
             continue
     print("Game Over! The word was: " + word)
+
 main() 
